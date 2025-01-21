@@ -1,0 +1,21 @@
+﻿@model MvcSatısProje.Models.TBLKATEGORILER
+@{
+    ViewBag.Title = "UpdateCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container mt-5 p-4 shadow-sm rounded bg-light">
+    <h2 class="text-center mb-4 text-primary">Kategori Güncelleme Sayfası</h2>
+    <form method="post">
+        @Html.HiddenFor(x => x.ID)
+        <div class="form-group">
+            <label for="AD" class="form-label text-secondary fw-bold">Kategori Adı</label>
+            @Html.TextBoxFor(x => x.AD, new { @class = "form-control", @id = "AD", @placeholder = "Kategori ismini güncelleyin", })
+        </div>
+        <div class="text-center mt-4">
+            <button type="submit" class="btn btn-warning">
+                <i class="fa fa-edit"></i> Kategoriyi Güncelle
+            </button>
+        </div>
+    </form>
+</div>

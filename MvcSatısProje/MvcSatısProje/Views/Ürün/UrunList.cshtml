@@ -1,0 +1,86 @@
+﻿@model List<MvcSatısProje.Models.TBLURUNLER>
+
+@{
+    ViewBag.Title = "UrunList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container mt-5 p-4 shadow-sm rounded bg-light">
+    <h2 class="text-center mb-4 text-primary">Ürün Yönetimi</h2>
+
+    <!-- Arama Paneli -->
+    @using (Html.BeginForm("UrunList", "Ürün", FormMethod.Get))
+    {
+        <div class="input-group mb-4">
+            <input type="text" class="form-control search-input" name="p" placeholder="Ürün adını girin..." aria-label="Ürün Adı">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="submit">
+                    <i class="fa fa-search"></i> Ara
+                </button>
+            </div>
+        </div>
+    }
+
+    <table class="table table-hover table-bordered">
+        <thead class="bg-primary text-white">
+            <tr>
+                <th style="width: 10%;">ID</th>
+                <th style="width: 30%;">Ürün Adı</th>
+                <th style="width: 10%;">Markası</th>
+                <th style="width: 10%;">Stok</th>
+                <th style="width: 10%;">Alış Fiyatı</th>
+                <th style="width: 10%;">Satış Fiyatı</th>
+                <th style="width: 15%;">Kategori</th>
+                <th style="width: 25%;">Güncelle</th>
+                <th style="width: 25%;">Kaldır</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var urun in Model)
+            {
+                <tr>
+                    <td class="text-center">@urun.ID</td>
+                    <td>@urun.AD</td>
+                    <td>@urun.MARKA</td>
+                    <td>@urun.STOK</td>
+                    <td>@urun.ALISFIYAT</td>
+                    <td>@urun.SATISFIYAT</td>
+                    <td>@urun.TBLKATEGORILER.AD</td>
+                    <td class="text-center">
+                        <a href="/Ürün/UpdateUrun/@urun.ID" class="btn btn-outline-success btn-sm">
+                            <i class="fa fa-edit"></i> Güncelle
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a href="/Ürün/DeleteUrun/@urun.ID" onclick="return confirm('Bu ürünü silmek istediğinizden emin misiniz?')" class="btn btn-outline-danger btn-sm">
+                            <i class="fa fa-trash"></i> Kaldır
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="text-center mt-3">
+        <a href="/Ürün/CreateUrun" class="btn btn-primary">
+            <i class="fa fa-plus"></i> Yeni Ürün Ekle
+        </a>
+    </div>
+</div>
+
+<!-- Stil Ayarları -->
+<style>
+    .search-input {
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 0.5rem;
+    }
+
+        .search-input:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+        }
+</style></div>
+

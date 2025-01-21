@@ -1,0 +1,36 @@
+﻿@model MvcSatısProje.Models.TBLSATISLAR
+@{
+    ViewBag.Title = "CreateList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container mt-5 p-4 shadow-sm rounded bg-light">
+    <h2 class="text-center mb-4 text-dark fw-bold">Satış Sayfası</h2>
+    <form method="post">
+        <div class="form-group">
+            <label for="ID" class="form-label text-dark fw-bold">Ürünler</label>
+            @Html.DropDownListFor(x => x.TBLURUNLER.ID, (List<SelectListItem>)ViewBag.a, new { @class = "form-control" })
+
+
+            <label for="ID" class="form-label text-dark fw-bold">Personeller</label>
+            @Html.DropDownListFor(x => x.TBLPERSONEL.ID, (List<SelectListItem>)ViewBag.b, new { @class = "form-control" })
+
+
+
+            <label for="ID" class="form-label text-dark fw-bold">Müşteriler</label>
+            @Html.DropDownListFor(x => x.TBLMUSTERILER.ID, (List<SelectListItem>)ViewBag.c, new { @class = "form-control" })
+
+
+            <label for="FIYAT" class="form-label text-dark fw-bold">Fiyat</label>
+            <input type="text" name="FIYAT" id="FIYAT" class="form-control" />
+
+
+        </div>
+        <div class="text-center mt-4">
+            <button type="submit" class="btn btn-success">
+                <i class="fa fa-plus"></i> Kaydet
+            </button>
+        </div>
+    </form>
+</div>
+

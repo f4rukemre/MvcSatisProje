@@ -1,0 +1,41 @@
+﻿@model MvcSatısProje.Models.TBLURUNLER
+@{
+    ViewBag.Title = "CreateUrun";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container mt-5 p-4 shadow-sm rounded bg-light">
+    <h2 class="text-center mb-4 text-dark fw-bold">Ürün Ekleme Sayfası</h2>
+    <form method="post">
+        <div class="form-group">
+            <label for="AD" class="form-label text-dark fw-bold">Ürün Adı</label>
+            <input type="text" name="AD" id="AD" class="form-control" placeholder="Ürün adını giriniz" />
+
+            <label for="MARKA" class="form-label text-dark fw-bold">Ürün Markası</label>
+            <input type="text" name="MARKA" id="MARKA" class="form-control" placeholder="Ürün markasını giriniz" />
+
+            <label for="STOK" class="form-label text-dark fw-bold">Stok</label>
+            <input type="text" name="STOK" id="STOK" class="form-control" placeholder="Stok miktarını giriniz" />
+
+            <label for="ALISFIYAT" class="form-label text-dark fw-bold">Alış Fiyatı</label>
+            <input type="text" name="ALISFIYAT" id="ALISFIYAT" class="form-control" placeholder="Alış fiyatını giriniz" />
+
+            <label for="SATISFIYAT" class="form-label text-dark fw-bold">Satış Fiyatı</label>
+            <input type="text" name="SATISFIYAT" id="SATISFIYAT" class="form-control" placeholder="Satış fiyatını giriniz" />
+
+            <label for="KATEGORI" class="form-label text-dark fw-bold">Kategori Adı</label>
+            @Html.DropDownListFor(x => x.TBLKATEGORILER.ID, (List<SelectListItem>)ViewBag.drop, new { @class = "form-control" })
+        </div>
+        <div class="text-center mt-4">
+            <button type="submit" class="btn btn-success">
+                <i class="fa fa-plus"></i> Ürünü Ekle
+            </button>
+        </div>
+    </form>
+</div>
+
+
+
+
+
+

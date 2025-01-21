@@ -1,0 +1,31 @@
+﻿@model MvcSatısProje.Models.TBLMUSTERILER
+@{
+    ViewBag.Title = "UpdateMusteri";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container mt-5 p-4 shadow-sm rounded bg-light">
+    <h2 class="text-center mb-4 text-primary">Ürün Güncelleme Sayfası</h2>
+    <form method="post">
+        @Html.HiddenFor(x => x.ID)
+        <div class="form-group">
+            <label for="AD" class="form-label text-secondary fw-bold">Ad</label>
+            @Html.TextBoxFor(x => x.AD, new { @class = "form-control", @id = "AD", @placeholder = "Ürün ismini güncelleyin" })
+
+            <label for="SOYAD" class="form-label text-secondary fw-bold">Soyad</label>
+            @Html.TextBoxFor(x => x.SOYAD, new { @class = "form-control", @id = "SOYAD", @placeholder = "Marka ismini güncelleyin" })
+
+            <label for="SEHİR" class="form-label text-secondary fw-bold">Şehir</label>
+            @Html.TextBoxFor(x => x.SEHIR, new { @class = "form-control", @id = "SEHIR", @placeholder = "Stok durumunu güncelleyin" })
+
+            <label for="BAKIYE" class="form-label text-secondary fw-bold">Bakiye</label>
+            @Html.TextBoxFor(x => x.BAKIYE, new { @class = "form-control", @id = "BAKIYE", @placeholder = "Alış fiyatını güncelleyin" })
+        </div>
+        <div class="text-center mt-4">
+            <button type="submit" class="btn btn-warning">
+                <i class="fa fa-edit"></i> Kaydet
+            </button>
+        </div>
+    </form>
+</div>
+

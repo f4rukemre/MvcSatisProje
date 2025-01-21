@@ -1,0 +1,41 @@
+﻿@model List<MvcSatısProje.Models.TBLSATISLAR>
+@{
+    ViewBag.Title = "SatısList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container mt-5 p-4 shadow-sm rounded bg-light">
+    <h2 class="text-center mb-4 text-primary">Satış Yönetimi</h2>
+    <table class="table table-hover table-bordered">
+        <thead class="bg-primary text-white">
+            <tr>
+                <th style="width: 10%;">ID</th>
+                <th style="width: 30%;">Ürün</th>
+                <th style="width: 10%;">Personel</th>
+                <th style="width: 10%;">Müşteri</th>
+                <th style="width: 10%;">Fiyat</th>
+                <th style="width: 10%;">Tarih</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var satıs in Model)
+            {
+                <tr>
+                    <td class="text-center">@satıs.ID</td>
+                    <td>@satıs.TBLURUNLER.AD</td>
+                    <td>@satıs.TBLPERSONEL.AD @satıs.TBLPERSONEL.SOYAD</td>
+                    <td>@satıs.TBLMUSTERILER.AD @satıs.TBLPERSONEL.SOYAD</td>
+                    <td>@satıs.FIYAT</td>
+                    <td>@satıs.TARIH</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="text-center mt-3">
+        <a href="/Satış/CreateList" class="btn btn-primary">
+            <i class="fa fa-plus"></i> Yeni Satış Ekle
+        </a>
+    </div>
+</div>
+
+

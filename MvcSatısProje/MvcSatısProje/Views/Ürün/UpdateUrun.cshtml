@@ -1,0 +1,37 @@
+﻿@model MvcSatısProje.Models.TBLURUNLER
+@{
+    ViewBag.Title = "UpdateUrun";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container mt-5 p-4 shadow-sm rounded bg-light">
+    <h2 class="text-center mb-4 text-primary">Ürün Güncelleme Sayfası</h2>
+    <form method="post">
+        @Html.HiddenFor(x => x.ID)
+        <div class="form-group">
+            <label for="AD" class="form-label text-secondary fw-bold">Ürün Adı</label>
+            @Html.TextBoxFor(x => x.AD, new { @class = "form-control", @id = "AD", @placeholder = "Ürün ismini güncelleyin" })
+
+            <label for="MARKA" class="form-label text-secondary fw-bold">Ürün Markası</label>
+            @Html.TextBoxFor(x => x.MARKA, new { @class = "form-control", @id = "MARKA", @placeholder = "Marka ismini güncelleyin" })
+
+            <label for="STOK" class="form-label text-secondary fw-bold">Stok</label>
+            @Html.TextBoxFor(x => x.STOK, new { @class = "form-control", @id = "STOK", @placeholder = "Stok durumunu güncelleyin" })
+
+            <label for="ALISFIYAT" class="form-label text-secondary fw-bold">Alış Fiyatı</label>
+            @Html.TextBoxFor(x => x.ALISFIYAT, new { @class = "form-control", @id = "ALISFIYAT", @placeholder = "Alış fiyatını güncelleyin" })
+
+            <label for="SATISFIYAT" class="form-label text-secondary fw-bold">Satış Fiyatı</label>
+            @Html.TextBoxFor(x => x.SATISFIYAT, new { @class = "form-control", @id = "SATISFIYAT", @placeholder = "Satış fiyatını güncelleyin" })
+
+            <label for="KATEGORI" class="form-label text-secondary fw-bold">Kategori</label>
+            @Html.DropDownListFor(x => x.TBLKATEGORILER.ID, (SelectList)ViewBag.Kategoriler, new { @class = "form-control" })
+        </div>
+        <div class="text-center mt-4">
+            <button type="submit" class="btn btn-warning">
+                <i class="fa fa-edit"></i> Kaydet
+            </button>
+        </div>
+    </form>
+</div>
+
