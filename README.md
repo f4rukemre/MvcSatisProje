@@ -21,3 +21,5 @@ Kategori Ekleme ve Görüntüleme Paneli
 ![Image](https://github.com/user-attachments/assets/b739d4ad-156a-4a34-b512-d42b06bfdfd4)
 
 ![Image](https://github.com/user-attachments/assets/87b58f82-e20f-44ad-9bdf-637b1e49b980)
+
+🚀 Kullanılan Teknolojiler ve Uygulamalar: ● Microsoft SQL Server (MSSQL) Veritabanı ● ASP.NET MVC ● Linq Sorgular ● Layout Kontrolü ● Db First yaklaşımı ● Entity Framework ● Temel CRUD İşlemleri ● Partial View Kullanımı ● Model, View, Controller Yapıları ● Entity Framework Sorguları ● Bootstrap Kullanımı
